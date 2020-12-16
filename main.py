@@ -15,7 +15,7 @@ async def make_ingreso(ingreso: IngresoIn):
     return salida
 
 @api.get("/user/ingresos/{id_ingreso}")
-async def get_ingresos_main(id_ingreso: str):
+async def get_ingresos_main(id_ingreso: int):
     ingreso_in_db = get_ingresos(id_ingreso)
     if ingreso_in_db == None:
         raise HTTPException(status_code=404,
